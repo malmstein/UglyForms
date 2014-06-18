@@ -58,20 +58,20 @@
         android:weightSum="2">
 
         <Button
-          android:id="@+id/sign_in_button"
-          style="?android:textAppearanceSmall"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_weight="1"
-          android:text="@string/action_sign_in" />
-
-        <Button
           android:id="@+id/register_button"
           style="?android:textAppearanceSmall"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
           android:layout_weight="1"
           android:text="@string/action_register" />
+
+        <Button
+          android:id="@+id/sign_in_button"
+          style="?android:textAppearanceSmall"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:text="@string/action_sign_in" />
 
       </LinearLayout>
 
