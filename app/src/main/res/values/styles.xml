@@ -1,0 +1,17 @@
+<resources>
+
+  <style name="UglyTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+
+  </style>
+
+  <style name="Ugly.Form.Header" parent="android:TextAppearance.Large">
+    <item name="android:paddingBottom">@dimen/form_vertical_padding</item>
+    <item name="android:paddingTop">@dimen/form_vertical_padding</item>
+  </style>
+
+  <style name="Ugly.Form.EditText" parent="android:TextAppearance.Medium">
+    <item name="android:maxLines">1</item>
+    <item name="android:singleLine">true</item>
+  </style>
+
+</resources>

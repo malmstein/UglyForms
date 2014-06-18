@@ -1,0 +1,9 @@
+<resources>
+
+  <!-- FLOATING.FONTS -->
+  <color name="font_grey">#9f9f9f</color>
+  <color name="font_white">#ffffff</color>
+  <color name="font_anthrazit">#252525</color>
+  <color name="font_holo_blue">@android:color/holo_blue_light</color>
+
+</resources>
