@@ -20,6 +20,5 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.malmstein.floatinghints:0.0.1-SNAPSHOT'
 }
