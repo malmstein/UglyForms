@@ -12,14 +12,14 @@
   tools:context=".UglyFormActivity">
 
   <ScrollView
-    android:id="@+id/login_form"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ViewAnimator
+      android:id="@+id/form_animator"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_gravity="bottom">
+      android:layout_gravity="center">
 
       <include
         android:id="@+id/form_register"
