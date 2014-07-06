@@ -15,7 +15,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.malmstein.widgets.ViewSwitcher
+    <com.malmstein.widgets.MultipleViewSwitcher
       android:id="@+id/form_animator"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         android:id="@+id/form_login"
         layout="@layout/view_form_login" />
 
-    </com.malmstein.widgets.ViewSwitcher>
+    </com.malmstein.widgets.MultipleViewSwitcher>
 
   </ScrollView>
 

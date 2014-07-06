@@ -5,14 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ViewAnimator;
 
-import com.malmstein.widgets.ViewSwitcher;
+import com.malmstein.widgets.MultipleViewSwitcher;
 
 public class DemoActivity extends Activity implements View.OnClickListener {
 
     private Animation slideInRight, slideOutLeft, slideInLeft, slideOutRight;
-    private ViewSwitcher formAnimator;
+    private MultipleViewSwitcher formAnimator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class DemoActivity extends Activity implements View.OnClickListener {
     }
 
     private void findViews(){
-        formAnimator = (ViewSwitcher) findViewById(R.id.form_animator);
+        formAnimator = (MultipleViewSwitcher) findViewById(R.id.form_animator);
         findViewById(R.id.welcome_login).setOnClickListener(this);
         findViewById(R.id.welcome_register).setOnClickListener(this);
         findViewById(R.id.register_cancel).setOnClickListener(this);
