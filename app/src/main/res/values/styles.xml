@@ -1,6 +1,6 @@
 <resources>
 
-  <style name="UglyTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+  <style name="UglyTheme" parent="android:Theme.Holo">
 
   </style>
 
