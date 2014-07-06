@@ -18,7 +18,3 @@ android {
         }
     }
 }
-
-dependencies {
-    compile 'com.malmstein.floatinghints:0.0.1-SNAPSHOT'
-}

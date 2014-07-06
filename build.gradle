@@ -7,9 +7,32 @@ buildscript {
     }
 }
 
-allprojects {
+subprojects {
+    buildscript {
+        repositories {
+            mavenCentral()
+            maven {
+                url "https://oss.sonatype.org/content/repositories/snapshots"
+            }
+            maven {
+                url "https://oss.sonatype.org/content/groups/public"
+            }
+            maven {
+                url "http://ci.novoda.com/maven/releases/"
+            }
+        }
+    }
+
     repositories {
         mavenCentral()
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots"
+        }
+        maven {
+            url "https://oss.sonatype.org/content/groups/public"
+        }
+        maven {
+            url "http://ci.novoda.com/maven/releases/"
+        }
     }
 }
