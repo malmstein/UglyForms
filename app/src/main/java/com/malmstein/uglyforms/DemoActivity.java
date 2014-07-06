@@ -10,6 +10,7 @@ import com.malmstein.widgets.MultipleViewSwitcher;
 
 public class DemoActivity extends Activity implements View.OnClickListener {
 
+    private static final String KEY_DISPLAYED_CHILD = "KEY_DISPLAYED_CHILD";
     private Animation slideInRight, slideOutLeft, slideInLeft, slideOutRight;
     private MultipleViewSwitcher formAnimator;
 
@@ -19,10 +20,10 @@ public class DemoActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_ugly_form);
 
         findViews();
-        initAnimator();
+        initAnimator(savedInstanceState);
     }
 
-    private void findViews(){
+    private void findViews() {
         formAnimator = (MultipleViewSwitcher) findViewById(R.id.form_animator);
         findViewById(R.id.welcome_login).setOnClickListener(this);
         findViewById(R.id.welcome_register).setOnClickListener(this);
@@ -30,9 +31,9 @@ public class DemoActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.login_cancel).setOnClickListener(this);
     }
 
-    private void initAnimator(){
+    private void initAnimator(Bundle savedInstanceState) {
         initSwitcherAnimations();
-        initAnimatorPosition();
+        restoreSwitcherState(savedInstanceState);
     }
 
     private void initSwitcherAnimations() {
@@ -42,13 +43,16 @@ public class DemoActivity extends Activity implements View.OnClickListener {
         slideOutRight = AnimationUtils.loadAnimation(this, R.anim.slide_out_right);
     }
 
-    private void initAnimatorPosition(){
-        formAnimator.setDisplayedChild(1);
+    private void restoreSwitcherState(Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            int position = savedInstanceState.getInt(KEY_DISPLAYED_CHILD);
+            formAnimator.setDisplayedChild(position);
+        }
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.welcome_login:
                 animateNext();
                 break;
@@ -66,7 +70,7 @@ public class DemoActivity extends Activity implements View.OnClickListener {
         }
     }
 
-    private void animateNext(){
+    private void animateNext() {
         slideInRight();
         formAnimator.showNext();
     }
@@ -85,4 +89,11 @@ public class DemoActivity extends Activity implements View.OnClickListener {
         formAnimator.setInAnimation(slideInRight);
         formAnimator.setOutAnimation(slideOutLeft);
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        int position = formAnimator.getDisplayedChild();
+        savedInstanceState.putInt(KEY_DISPLAYED_CHILD, position);
+    }
+
 }
