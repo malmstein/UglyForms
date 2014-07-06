@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="@dimen/activity_horizontal_margin">
+
+  <TextView
+    style="@style/Ugly.Form.Header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/ugly_form_register" />
+
+  <LinearLayout
+    android:id="@+id/form_login"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.malmstein.floatinghints.FloatingHintEditTextLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:floatingHintTextAppearance="@style/Ugly.Form.FloatingHint">
+
+      <EditText
+        style="@style/Ugly.Form.EditText"
+        android:id="@+id/email_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_email"
+        android:inputType="textEmailAddress" />
+
+    </com.malmstein.floatinghints.FloatingHintEditTextLayout>
+
+    <com.malmstein.floatinghints.FloatingHintEditTextLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:floatingHintTextAppearance="@style/Ugly.Form.FloatingHint">
+
+      <EditText
+        style="@style/Ugly.Form.EditText"
+        android:id="@+id/password_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_password"
+        android:inputType="textPassword" />
+
+    </com.malmstein.floatinghints.FloatingHintEditTextLayout>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/form_login_actions"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/form_horizontal_padding"
+    android:weightSum="2">
+
+    <Button
+      android:id="@+id/register_cancel"
+      style="?android:textAppearanceSmall"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="@string/action_cancel" />
+
+    <Button
+      android:id="@+id/register_action"
+      style="?android:textAppearanceSmall"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:text="@string/action_register" />
+
+  </LinearLayout>
+
+</LinearLayout>

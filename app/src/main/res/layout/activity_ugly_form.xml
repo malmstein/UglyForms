@@ -19,7 +19,6 @@
       android:id="@+id/form_animator"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:layout_gravity="center"
       app:initialChild="1">
 
       <include
