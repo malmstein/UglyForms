@@ -18,7 +18,7 @@ public class DemoActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_ugly_form);
 
         findViews();
-        initSwitcherAnimations();
+        initAnimator();
     }
 
     private void findViews(){
@@ -29,11 +29,20 @@ public class DemoActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.login_cancel).setOnClickListener(this);
     }
 
+    private void initAnimator(){
+        initSwitcherAnimations();
+        initAnimatorPosition();
+    }
+
     private void initSwitcherAnimations() {
         slideInRight = AnimationUtils.loadAnimation(this, R.anim.slide_in_right);
         slideOutLeft = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
         slideInLeft = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
         slideOutRight = AnimationUtils.loadAnimation(this, R.anim.slide_out_right);
+    }
+
+    private void initAnimatorPosition(){
+        formAnimator.setDisplayedChild(1);
     }
 
     @Override
