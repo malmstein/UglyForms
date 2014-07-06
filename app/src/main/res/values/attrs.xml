@@ -9,7 +9,7 @@
   </declare-styleable>
 
   <declare-styleable name="MultipleViewSwitcher">
-    <attr name="initialChild" format="integer" />
+    <attr name="initialPage" format="integer" />
   </declare-styleable>
 
 </resources>

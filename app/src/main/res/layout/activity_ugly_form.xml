@@ -19,7 +19,7 @@
       android:id="@+id/form_animator"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      app:initialChild="1">
+      app:initialPage="1">
 
       <include
         android:id="@+id/form_register"

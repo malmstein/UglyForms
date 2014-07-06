@@ -33,7 +33,7 @@ public class DemoActivity extends Activity implements View.OnClickListener {
 
     private void initAnimator(Bundle savedInstanceState) {
         initSwitcherAnimations();
-        restoreSwitcherState(savedInstanceState);
+//        restoreSwitcherState(savedInstanceState);
     }
 
     private void initSwitcherAnimations() {
@@ -54,40 +54,20 @@ public class DemoActivity extends Activity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.welcome_login:
-                animateNext();
+                formAnimator.animateNext(slideInRight, slideOutLeft);
                 break;
             case R.id.welcome_register:
-                animateLeft();
+                formAnimator.animatePrevious(slideInLeft, slideOutRight);
                 break;
             case R.id.register_cancel:
-                animateNext();
+                formAnimator.animateNext(slideInRight, slideOutLeft);
                 break;
             case R.id.login_cancel:
-                animateLeft();
+                formAnimator.animatePrevious(slideInLeft, slideOutRight);
                 break;
             default:
                 new Exception("This view does not exist");
         }
-    }
-
-    private void animateNext() {
-        slideInRight();
-        formAnimator.showNext();
-    }
-
-    private void animateLeft() {
-        slideInLeft();
-        formAnimator.showPrevious();
-    }
-
-    private void slideInLeft() {
-        formAnimator.setInAnimation(slideInLeft);
-        formAnimator.setOutAnimation(slideOutRight);
-    }
-
-    private void slideInRight() {
-        formAnimator.setInAnimation(slideInRight);
-        formAnimator.setOutAnimation(slideOutLeft);
     }
 
     @Override
