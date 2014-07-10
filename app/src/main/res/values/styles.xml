@@ -1,6 +1,6 @@
 <resources>
 
-  <style name="UglyTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+  <style name="UglyTheme" parent="android:Theme.Holo">
 
   </style>
 
@@ -12,6 +12,12 @@
   <style name="Ugly.Form.EditText" parent="android:TextAppearance.Medium">
     <item name="android:maxLines">1</item>
     <item name="android:singleLine">true</item>
+  </style>
+
+  <style name="Ugly.Form.FloatingHint" parent="android:TextAppearance.Small">
+    <item name="android:textColor">@color/float_edit_text_layout_color</item>
+    <item name="android:textSize">@dimen/text_xs</item>
+    <item name="android:textStyle">bold</item>
   </style>
 
 </resources>

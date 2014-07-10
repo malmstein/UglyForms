@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
@@ -11,72 +12,28 @@
   tools:context=".UglyFormActivity">
 
   <ScrollView
-    android:id="@+id/login_form"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <com.malmstein.widgets.MultipleViewSwitcher
+      android:id="@+id/form_multiple_view_switcher"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:orientation="vertical">
+      app:initialPage="1">
 
-      <TextView
-        style="@style/Ugly.Form.Header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ugly_form_intro" />
+      <include
+        android:id="@+id/form_register"
+        layout="@layout/view_form_register" />
 
-      <LinearLayout
+      <include
+        android:id="@+id/form_welcome_message"
+        layout="@layout/view_form_welcome" />
+
+      <include
         android:id="@+id/form_login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        layout="@layout/view_form_login" />
 
-        <EditText
-          style="@style/Ugly.Form.EditText"
-          android:id="@+id/email_login"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="@string/prompt_email"
-          android:inputType="textEmailAddress" />
-
-        <EditText
-          style="@style/Ugly.Form.EditText"
-          android:id="@+id/password_login"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="@string/prompt_password"
-          android:inputType="textPassword" />
-
-      </LinearLayout>
-
-      <LinearLayout
-        android:id="@+id/form_login_actions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/form_horizontal_padding"
-        android:weightSum="2">
-
-        <Button
-          android:id="@+id/register_button"
-          style="?android:textAppearanceSmall"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_weight="1"
-          android:text="@string/action_register" />
-
-        <Button
-          android:id="@+id/sign_in_button"
-          style="?android:textAppearanceSmall"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_weight="1"
-          android:text="@string/action_sign_in" />
-
-      </LinearLayout>
-
-    </LinearLayout>
-
+    </com.malmstein.widgets.MultipleViewSwitcher>
 
   </ScrollView>
 

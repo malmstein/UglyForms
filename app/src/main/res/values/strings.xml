@@ -5,11 +5,15 @@
 
   <!-- FORM TEXT -->
   <string name="ugly_form_intro">This is a typical welcome message, as seen in many apps and yes, it\'s damn ugly</string>
+  <string name="ugly_form_register">Register to our Ugly service with just a few steps!</string>
+  <string name="ugly_form_login">Already have an Ugly account? Login here!</string>
 
   <string name="prompt_email">Email</string>
   <string name="prompt_password">Password</string>
   <string name="action_sign_in">Sign in</string>
   <string name="action_register">Register</string>
+  <string name="action_login">Login</string>
+  <string name="action_cancel">Cancel</string>
 
   <!-- ERROR MESSAGES -->
   <string name="error_invalid_email">This email address is invalid</string>
