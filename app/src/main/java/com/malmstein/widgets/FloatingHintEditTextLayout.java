@@ -1,4 +1,4 @@
-package com.malmstein.floatinghints;
+package com.malmstein.widgets;
 
 /*
  * Copyright (C) 2014 David Gonzalez

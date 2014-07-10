@@ -19,7 +19,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.malmstein.floatinghints.FloatingHintEditTextLayout
+    <com.malmstein.widgets.FloatingHintEditTextLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       app:floatingHintTextAppearance="@style/Ugly.Form.FloatingHint">
@@ -32,9 +32,9 @@
         android:hint="@string/prompt_email"
         android:inputType="textEmailAddress" />
 
-    </com.malmstein.floatinghints.FloatingHintEditTextLayout>
+    </com.malmstein.widgets.FloatingHintEditTextLayout>
 
-    <com.malmstein.floatinghints.FloatingHintEditTextLayout
+    <com.malmstein.widgets.FloatingHintEditTextLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       app:floatingHintTextAppearance="@style/Ugly.Form.FloatingHint">
@@ -47,7 +47,7 @@
         android:hint="@string/prompt_password"
         android:inputType="textPassword" />
 
-    </com.malmstein.floatinghints.FloatingHintEditTextLayout>
+    </com.malmstein.widgets.FloatingHintEditTextLayout>
 
   </LinearLayout>
 
