@@ -106,7 +106,8 @@ public class MultipleViewSwitcher extends ViewAnimator {
     public void onRestoreInstanceState(Parcelable state) {
         if (state instanceof Bundle) {
             Bundle bundle = (Bundle) state;
-            setDisplayedChild(bundle.getInt("displayedChild"));
+            initialChild = bundle.getInt("displayedChild");
+            setDisplayedChild(initialChild);
             state = bundle.getParcelable("instanceState");
         }
         super.onRestoreInstanceState(state);
