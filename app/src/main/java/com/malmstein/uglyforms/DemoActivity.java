@@ -20,20 +20,19 @@ public class DemoActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_ugly_form);
 
         findViews();
-        initAnimator(savedInstanceState);
+        initAnimator();
     }
 
     private void findViews() {
-        formAnimator = (MultipleViewSwitcher) findViewById(R.id.form_animator);
+        formAnimator = (MultipleViewSwitcher) findViewById(R.id.form_multiple_view_switcher);
         findViewById(R.id.welcome_login).setOnClickListener(this);
         findViewById(R.id.welcome_register).setOnClickListener(this);
         findViewById(R.id.register_cancel).setOnClickListener(this);
         findViewById(R.id.login_cancel).setOnClickListener(this);
     }
 
-    private void initAnimator(Bundle savedInstanceState) {
+    private void initAnimator() {
         initSwitcherAnimations();
-//        restoreSwitcherState(savedInstanceState);
     }
 
     private void initSwitcherAnimations() {
@@ -41,13 +40,6 @@ public class DemoActivity extends Activity implements View.OnClickListener {
         slideOutLeft = AnimationUtils.loadAnimation(this, R.anim.slide_out_left);
         slideInLeft = AnimationUtils.loadAnimation(this, R.anim.slide_in_left);
         slideOutRight = AnimationUtils.loadAnimation(this, R.anim.slide_out_right);
-    }
-
-    private void restoreSwitcherState(Bundle savedInstanceState) {
-        if (savedInstanceState != null) {
-            int position = savedInstanceState.getInt(KEY_DISPLAYED_CHILD);
-            formAnimator.setDisplayedChild(position);
-        }
     }
 
     @Override
@@ -68,12 +60,6 @@ public class DemoActivity extends Activity implements View.OnClickListener {
             default:
                 new Exception("This view does not exist");
         }
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        int position = formAnimator.getDisplayedChild();
-        savedInstanceState.putInt(KEY_DISPLAYED_CHILD, position);
     }
 
 }

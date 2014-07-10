@@ -16,7 +16,7 @@
     android:layout_height="match_parent">
 
     <com.malmstein.widgets.MultipleViewSwitcher
-      android:id="@+id/form_animator"
+      android:id="@+id/form_multiple_view_switcher"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       app:initialPage="1">
