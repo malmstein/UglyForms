@@ -2,6 +2,7 @@ package com.malmstein.widgets;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
@@ -21,10 +22,13 @@ public class MultipleViewSwitcher extends ViewAnimator {
     }
 
     public MultipleViewSwitcher(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
 
+    public MultipleViewSwitcher(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs);
 
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MultipleViewSwitcher);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.MultipleViewSwitcher, defStyle, 0);
         initialChild = a.getInt(R.styleable.MultipleViewSwitcher_initialPage, 0);
 
         a.recycle();
@@ -92,23 +96,20 @@ public class MultipleViewSwitcher extends ViewAnimator {
 
     @Override
     public Parcelable onSaveInstanceState() {
-        Parcelable superState = super.onSaveInstanceState();
-        SavedState ss = new SavedState(superState);
-        ss.position = getDisplayedChild();
-        return ss;
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("instanceState", super.onSaveInstanceState());
+        bundle.putInt("displayedChild", getDisplayedChild());
+        return bundle;
     }
 
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        if (!(state instanceof SavedState)) {
-            super.onRestoreInstanceState(state);
-            return;
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
+            setDisplayedChild(bundle.getInt("displayedChild"));
+            state = bundle.getParcelable("instanceState");
         }
-
-        SavedState ss = (SavedState) state;
-        super.onRestoreInstanceState(ss.getSuperState());
-
-        setDisplayedChild(ss.position);
+        super.onRestoreInstanceState(state);
     }
 
     /**
